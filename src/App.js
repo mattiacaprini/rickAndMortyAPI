@@ -1,25 +1,47 @@
-import logo from './logo.svg';
 import './App.css';
+import React from 'react';
+import Character from './character';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+    
+  render(){
+    return (
+      
+      <page>
+        <header className='headerSite'>
+          <div className='insideHeaderUp'>
+            <div className='logo'>
+              <image> <h1>Logo</h1> </image>
+            </div>
+
+            <div className='menu'>
+                <li><a>docs</a></li>
+                <li><a>about</a></li>
+                <li><a>support us</a></li>
+            </div>
+          </div>
+
+          <div className='title'>
+            <h1>The Rick and Morty API</h1>
+          </div>
+        </header>
+
+        <div className='figure' >
+          <div className='containerImg'>
+
+          <Character></Character>
+
+
+          </div>
+        </div>
+
+        <div className='footer' >
+        </div>
+
+      </page>
+
+    );
+  }
 }
 
 export default App;
