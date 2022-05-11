@@ -1,58 +1,12 @@
-.insideHeaderUp{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.headerSite{
-  border: 1px solid black;
-  padding: 1rem;
-  background-color: white;
-  height: calc(50vh - 60px)
-}
-
-.menu li{
-  border: 1px solid black;
-  display: inline-block;
-  margin: 0.3rem;
-} 
-
-.menu li a{
-  display: block;
-  padding: 0.5rem;
-  font-size: larger;
-}
-
-.logo{
-  border: 1px solid black;
-}
-
-.title{
-  text-align: center;
-  margin-top: 5rem;
-  font-size: 3.3rem ;
-}
-
 .figure{  
   background-color: rgb(36, 40, 47);
-  height: 45rem;
+  height: auto;
   padding-top: 5rem;
   padding-bottom: 5rem;
   min-height: calc(50vh - 60px);
 }
 
-.footer{
-  background-color: rgb(32, 35, 41);
-  height: 25rem;
-  min-height: calc(120px);
-}
-
-.card mb-3{
-  max-width: 540px;
-}
-
 .containerImg{
-  background-color: red;
   height: 100%;
   display: flex;
   -webkit-box-pack: center;
@@ -61,7 +15,6 @@
   align-items: center;
   flex-wrap: wrap;
 }
-
 
 /*
 .App-logo {
