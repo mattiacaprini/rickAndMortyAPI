@@ -25,5 +25,6 @@
 
 .title_txt{
     padding: 1rem;
+    flex: 1;
     color: rgb(245, 245, 245);
 }
