@@ -3,6 +3,7 @@ import './character.css';
 
 function Character(PROPS){
     return(
+
         <div className="show_case">
 
             <div className="container_img_monster" >

@@ -4,48 +4,67 @@ import Character from './componets/character/character';
 import Header from './componets/header/header';
 import Footer from './componets/footer/footer';
 
-import mostro1 from './img/immagine1.jpeg'
-import mostro2 from './img/immagine2.jpeg'
-import mostro3 from './img/immagine3.jpeg'
-import mostro4 from './img/immagine4.jpeg'
-import mostro5 from './img/immagine5.jpeg'
-import mostro6 from './img/immagine6.jpeg'
 //import logo from './img/sfondo.png'
-
+const axios = require('axios');
 
 
 
 class App extends React.Component {
+
+  constructor(){
+    super()
+    this.state = {
+      characters:[],
+      locaNumber : 0,
+      episodes : 0,
+      characterNumber : 0
+    }
+  }
+
+  componentDidMount(){
+    axios.get("https://rickandmortyapi.com/api/character").then(result => {
+      this.setState({
+        characters: result.data.results,
+        characterNumber : result.data.info.count
+      })
+
+    })
+    axios.get("https://rickandmortyapi.com/api/location").then(result => {
+      this.setState({
+        locaNumber : result.data.info.count
+      })  
     
-  state = {
-    characters:[
-      {img: mostro1, title: "Hamster In Butt", description: "17 anni", id: 0},
-      {img: mostro2, title: "Risotto's Tentacled Henchman", description: "19 anni", id:1},
-      {img: mostro3, title: "Worldender", description: "22 anni", id: 2},
-      {img: mostro4, title: "Heistotron", description: "21 anni", id: 3},
-      {img: mostro5, title: "Adam's Mother", description: "24 anni", id: 4},
-      {img: mostro6, title: "Scarecrow Beth", description: "30 anni", id: 5},
-    ]
+    })
+    axios.get("https://rickandmortyapi.com/api/episode").then(result => {
+      this.setState({
+        episodes : result.data.info.count
+      })  
+    })
   }
 
   render(){
+    console.log(this.state.characters)
+    const index = Math.round(Math.random()*14)
+    const selectedCharacter = this.state.characters.slice(index, index + 6)
     return (
       
-      <page>
+      <div>
         
         <Header/>
 
         <div className='figure' >
           <div className='containerImg'>
+
           {
-            this.state.characters.map((character, i) =>  <Character key={i} img = {character.img} title = {character.title} description={character.description}/>)
+            selectedCharacter.map((character, i) => 
+              <Character key={i} img = {character.image} title = {character.name} description={character.type}/>)
           }
           </div>
         </div>
 
-        <Footer/>
+        <Footer charNumber = {this.state.characterNumber} locaNumber = {this.state.locaNumber} episNumber = {this.state.episodes}/>
 
-      </page>
+      </div>
     );
   }
 }
