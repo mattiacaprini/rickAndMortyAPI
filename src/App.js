@@ -17,7 +17,8 @@ class App extends React.Component {
       characters:[],
       locaNumber : 0,
       episodes : 0,
-      characterNumber : 0
+      characterNumber : 0,
+      episNumber : 0
     }
   }
 
