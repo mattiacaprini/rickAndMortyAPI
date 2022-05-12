@@ -13,9 +13,9 @@ function Header(){
             </div>
 
             <div className='menu'>
-                <li><a>docs</a></li>
-                <li><a>about</a></li>
-                <li className="support_us" ><a>support us</a></li>
+                <p><span>docs</span></p>
+                <p><span>about</span></p>
+                <p className="support_us" ><span>support us</span></p>
             </div>
             </div>
 
